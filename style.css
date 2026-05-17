@@ -1,5 +1,7 @@
 body {
         background-color: #f0f8ff;
+        background-image: url(seigaiha.png);
+        background-repeat: repeat;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         text-align: center;
         padding-top: 20px;
