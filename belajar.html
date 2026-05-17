@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Pertama</title>
+        <title>Halaman Pertamaku</title>
+        <style>
+        /* Ini adalah kode CSS buat ngebikin web kamu jadi estetik */
+        body {
+            background-color: #f0f8ff; /* Mengubah warna background jadi biru muda */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Mengubah jenis huruf */
+            text-align: center; /* Membuat semua teks berada di tengah */
+            padding-top: 50px;
+        }
+
+        h1 {
+            color: #2c3e50; /* Mengubah warna judul jadi biru tua */
+        }
+
+        button {
+            background-color: #3498db; /* Warna tombol jadi biru terang */
+            color: white; /* Warna tulisan di tombol jadi putih */
+            border: none; /* Menghilangkan garis tepi tombol */
+            padding: 10px 20px; /* Memberikan ruang di dalam tombol */
+            font-size: 16px;
+            border-radius: 5px; /* Membuat sudut tombol jadi melengkung */
+            cursor: pointer; /* Mengubah ikon mouse jadi tangan saat menyentuh tombol */
+        }
+
+        button:hover {
+            background-color: #2980b9; /* Warna tombol agak berubah saat kursor di atasnya */
+        }
+
+        img {
+    width: 300px; /* Mengatur lebar gambar jadi 300 pixel */
+    height: auto; /* Tingginya otomatis menyesuaikan biar gak gepeng */
+    border-radius: 15px; /* Membuat pojokan gambar jadi melengkung halus */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Ngasih efek bayangan tipis biar estetik */
+    margin-bottom: 20px; /* Ngasih jarak bawah biar gak nempel sama tombol */
+}
+
+/* Ini untuk ngasih tahu si 'kotak pembungkus' tadi */
+.kontainer {
+    display: flex; /* Aktifkan jurus Flexbox */
+    flex-direction: column; /* Susun isinya ke BAWAH (kolom), bukan ke samping */
+    align-items: center; /* Pastikan semua isinya di TENAH secara horizontal */
+    gap: 20px; /* Jarak otomatis antara gambar dan tombol (biar gak nempel) */
+}
+
+/* Kita hapus margin-bottom di gambar yang sebelumnya biar gak dobel jarak */
+img {
+    margin-bottom: 0px !important;
+}
+
+
+        </style>
+</head>
+
+<body>
+    <h1>Selamat Datang di Web Pertamaku!</h1>
+<p>Saya sedang belajar membuat website menggunakan VS Code.</p>
+<div class="kontainer">
+    <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=500" alt="Ilustrasi Coding">
+    <button onclick="alert('Halo! Pintu otomatisnya bekerja!')">Klik Saya</button>
+</div>
+
+<p><a href="sheet-pembelajaran.html">Kembali Ke Sheet Pembelajaran</a></p>
+    
+</body>
+</html>

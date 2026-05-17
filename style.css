@@ -1,0 +1,49 @@
+body {
+        background-color: #f0f8ff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+        padding-top: 20px;
+    }
+
+h1 {
+        color: #2c3e50; /* Warna teks jadi gelap */
+        font: bold 36px 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Mengubah jenis dan ukuran huruf */
+        margin-bottom: 20px; /* Memberikan jarak di bawah judul */ 
+    }
+
+h2 {
+        color: #34495e; /* Warna teks jadi sedikit lebih terang dari h1 */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 24px; /* Ukuran huruf untuk subjudul */
+        margin-bottom: 15px; /* Memberikan jarak di bawah subjudul */
+    }
+
+p {
+        color: #2c3e50; /* Warna teks jadi gelap */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 12px;
+    }
+
+dl {
+        text-align: left; /* Membuat teks di dalam dl rata kiri */
+        display: inline-block; /* Membuat dl hanya selebar isinya */
+        margin-top: 20px; /* Memberikan jarak di atas dl */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 12px;
+    }
+
+button {
+            background-color: #3498db; /* Warna tombol jadi biru terang */
+            color: white; /* Warna tulisan di tombol jadi putih */
+            border: none; /* Menghilangkan garis tepi tombol */
+            padding: 10px 50px; /* Memberikan ruang di dalam tombol */
+            font-size: 16px;
+            border-radius: 5px; /* Membuat sudut tombol jadi melengkung */
+            cursor: pointer; /* Mengubah ikon mouse jadi tangan saat menyentuh tombol */
+            margin-block-end: 15px; /* Memberikan jarak di bawah tombol */
+            margin-right: 15px; /* Memberikan jarak di bawah tombol */
+        }
+
+        button:hover {
+        background-color: #2980b9; /* Warna tombol agak berubah saat kursor di atasnya */
+        }

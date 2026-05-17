@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir</title>
+    <link rell="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <h1>Formulir</h1>
+    <p>Ini adalah halaman untuk belajar membuat formulir di HTML.</p>
+
+    <a href="sheet-pembelajaran.html">
+        <button>Back to Sheet Pembelajaran</button>
+    </a>
+
+    <hr>
+
+    <form action="submit_form.php" method="post">
+        <label for="nama">Nama:</label><br>
+        <input type="text" id="nama" name="nama" required><br><br> 
+
+        <label for="jenis kelamin">Jenis Kelamin:</label><br>
+
+        <input type="radio" id="laki-laki" name="jenis_kelamin" value="laki-laki" required>
+        <label for="laki-laki">Laki-laki</label><br>
+        <input type="radio" id="perempuan" name="jenis_kelamin" value="Perempuan" required>
+        <label for="perempuan">Perempuan</label><br><br>
+
+        <label for="umur">Umur:</label><br>
+        <input type="number" id="umur" name="umur" required><br><br>
+
+        <label for="asal sekolah">Asal Sekolah:</label><br>
+        <input type="text" id="asal sekolah" name="asal_sekolah" required><br><br>
+
+        <label for="nomor-hp"></label>Nomor HP:</label><br>
+        <input type="tel" id="nomor-hp" name="nomor_hp" required><br><br>
+
+        <input type="submit" value="Kirim">
+    </form>
+
+
+
+</body>
+
+</html>
