@@ -6,83 +6,126 @@
   <title>Eki Yogawanto (Kiyo) – Guru &amp; Pengembang Pemula</title>
   <meta name="description" content="Portofolio Eki Yogawanto (Kiyo): guru, trainer bersertifikat, dan pengembang web pemula.">
   <link rel="icon" href="logo-kiyo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="nav">
-    <a class="brand" href="#top"><img src="logo-kiyo.webp" alt="" width="28" height="28"> Kiyo</a>
+    <a class="brand" href="#top"><img src="logo-kiyo.webp" alt="" width="30" height="30"> Kiyo</a>
     <nav>
       <a href="#tentang">Tentang</a>
       <a href="#proyek">Proyek</a>
       <a href="#cv">CV</a>
-      <a href="#kontak">Kontak</a>
+      <a href="#kontak" class="pill">Kontak</a>
     </nav>
   </header>
 
   <main id="top">
     <section class="hero">
-      <img class="foto" src="foto-kiyo.jpg" alt="Foto Eki Yogawanto" width="160" height="160">
-      <div>
-        <p class="eyebrow">Guru · Trainer · Pengembang pemula</p>
-        <h1>Halo, saya Eki Yogawanto.<br>Biasa dipanggil <span>Kiyo</span>.</h1>
-        <p class="lead">Saya guru muda yang suka membuat alat digital kecil untuk membantu pekerjaan di sekolah.</p>
-        <div class="cta">
-          <a class="btn" href="#proyek">Lihat proyek</a>
-          <a class="btn ghost" href="#kontak">Hubungi saya</a>
+      <div class="wrap hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Halo, saya</p>
+          <h1>Eki Yogawanto<br><span>biasa dipanggil Kiyo</span></h1>
+          <p class="lead">Guru muda yang suka membuat alat digital kecil untuk membantu pekerjaan di sekolah.</p>
+          <ul class="chips">
+            <li>Certified Teacher</li>
+            <li>Certified Trainer</li>
+            <li>Pengembang Web Pemula</li>
+          </ul>
+          <div class="cta">
+            <a class="btn" href="#proyek">Lihat proyek</a>
+            <a class="btn ghost" href="#kontak">Hubungi saya</a>
+          </div>
+        </div>
+        <div class="photo-wrap">
+          <img class="foto" src="foto-kiyo.jpg" alt="Foto Eki Yogawanto" width="260" height="260">
         </div>
       </div>
     </section>
 
-    <section id="tentang">
-      <h2>Tentang saya</h2>
-      <p>Saya lulusan Pendidikan Seni Rupa Universitas Negeri Jakarta. Minat saya ada di teknologi dan pengembangan perangkat lunak, dan saya aktif di komunitas teknologi.</p>
-      <p>Di luar kerja saya suka bermain game strategi dan RPG, membaca buku teknologi dan pengembangan diri, serta bersepeda dan berlari.</p>
-    </section>
+    <div class="wrap">
+      <section id="tentang" class="reveal">
+        <p class="kicker">Tentang</p>
+        <h2>Mengajar, membuat, dan terus belajar</h2>
+        <div class="two">
+          <p>Saya lulusan Pendidikan Seni Rupa Universitas Negeri Jakarta. Minat saya ada di teknologi dan pengembangan perangkat lunak, dan saya aktif di komunitas teknologi.</p>
+          <div>
+            <p class="small-title">Di waktu luang</p>
+            <ul class="chips light">
+              <li>Game strategi &amp; RPG</li>
+              <li>Buku teknologi &amp; pengembangan diri</li>
+              <li>Bersepeda</li>
+              <li>Berlari</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-    <section id="proyek">
-      <h2>Proyek</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Kuas Nilai</h3>
-          <p>Web untuk membantu pengolahan nilai, saya buat dan pakai sendiri.</p>
-          <a href="https://kuasnilaisrk.netlify.app" target="_blank" rel="noopener">Buka situs →</a>
-        </article>
-        <article class="card">
-          <h3>Catatan belajar web</h3>
-          <p>Latihan HTML saya: tabel, formulir, dan dasar-dasar halaman web.</p>
-          <a href="sheet-pembelajaran.html">Lihat catatan →</a>
-        </article>
-      </div>
-    </section>
+      <section id="proyek" class="reveal">
+        <p class="kicker">Proyek</p>
+        <h2>Yang sedang saya kerjakan</h2>
+        <div class="grid">
+          <a class="card" href="https://kuasnilaisrk.netlify.app" target="_blank" rel="noopener">
+            <i class="ic big" style="--i:url(https://api.iconify.design/fa6-solid/chart-column.svg)" aria-hidden="true"></i>
+            <h3>Kuas Nilai</h3>
+            <p>Web untuk membantu pengolahan nilai, saya buat dan pakai sendiri.</p>
+            <span class="more">Buka situs →</span>
+          </a>
+          <a class="card" href="sheet-pembelajaran.html">
+            <i class="ic big" style="--i:url(https://api.iconify.design/fa6-solid/code.svg)" aria-hidden="true"></i>
+            <h3>Catatan belajar web</h3>
+            <p>Latihan HTML saya: tabel, formulir, dan dasar-dasar halaman web.</p>
+            <span class="more">Lihat catatan →</span>
+          </a>
+        </div>
+      </section>
 
-    <section id="cv">
-      <h2>CV singkat</h2>
-      <ul class="timeline">
-        <li>
-          <strong>Pendidikan Seni Rupa – Universitas Negeri Jakarta</strong> <span>2024</span>
-          <p>Koordinator Seni Rupa Bidikmisi 2017, delegasi Pionir Muda XL Future Leader 2017, pengurus BEM Fakultas Bahasa dan Seni 2018.</p>
-        </li>
-        <li>
-          <strong>SMA Negeri Sumatera Selatan – Sampoerna Academy</strong> <span>2017</span>
-          <p>Kegiatan sosial bidang sanitasi dan kesehatan anak di area Jakabaring, serta asisten pustakawan sekolah.</p>
-        </li>
-      </ul>
-      <p class="note">Sertifikasi: Certified Teacher, Certified Trainer.</p>
-    </section>
+      <section id="cv" class="reveal">
+        <p class="kicker">CV singkat</p>
+        <h2>Pendidikan &amp; kegiatan</h2>
+        <ul class="timeline">
+          <li>
+            <span class="year">2024</span>
+            <strong>Pendidikan Seni Rupa – Universitas Negeri Jakarta</strong>
+            <p>Koordinator Seni Rupa Bidikmisi 2017, delegasi Pionir Muda XL Future Leader 2017, pengurus BEM Fakultas Bahasa dan Seni 2018.</p>
+          </li>
+          <li>
+            <span class="year">2017</span>
+            <strong>SMA Negeri Sumatera Selatan – Sampoerna Academy</strong>
+            <p>Kegiatan sosial bidang sanitasi dan kesehatan anak di area Jakabaring, serta asisten pustakawan sekolah.</p>
+          </li>
+        </ul>
+      </section>
 
-    <section id="kontak">
-      <h2>Kontak</h2>
-      <ul class="links">
-        <li><a href="mailto:ekiyogawanto@gmail.com"><i class="ic" style="--i:url(https://api.iconify.design/fa6-solid/envelope.svg)" aria-hidden="true"></i>Email</a></li>
-        <li><a href="https://www.linkedin.com/in/ekiyogawanto/" target="_blank" rel="noopener"><i class="ic" style="--i:url(https://api.iconify.design/fa6-brands/linkedin.svg)" aria-hidden="true"></i>LinkedIn</a></li>
-        <li><a href="https://www.instagram.com/10_kiyo" target="_blank" rel="noopener"><i class="ic" style="--i:url(https://api.iconify.design/fa6-brands/instagram.svg)" aria-hidden="true"></i>Instagram</a></li>
-        <li><a href="https://www.youtube.com/@10_kiyo" target="_blank" rel="noopener"><i class="ic" style="--i:url(https://api.iconify.design/fa6-brands/youtube.svg)" aria-hidden="true"></i>YouTube</a></li>
-        <li><a href="https://letterboxd.com/910_kiyo/" target="_blank" rel="noopener"><i class="ic" style="--i:url(https://api.iconify.design/simple-icons/letterboxd.svg)" aria-hidden="true"></i>Letterboxd</a></li>
-        <li><a href="https://bit.ly/strava-kiyo" target="_blank" rel="noopener"><i class="ic" style="--i:url(https://api.iconify.design/fa6-brands/strava.svg)" aria-hidden="true"></i>Strava</a></li>
-      </ul>
-    </section>
+      <section id="kontak" class="reveal">
+        <p class="kicker">Kontak</p>
+        <h2>Mari terhubung</h2>
+        <ul class="links">
+          <li><a href="mailto:ekiyogawanto@gmail.com"><i class="ic" style="--i:url(https://api.iconify.design/fa6-solid/envelope.svg)" aria-hidden="true"></i>Email</a></li>
+          <li><a href="https://www.linkedin.com/in/ekiyogawanto/" target="_blank" rel="noopener"><i class="ic" style="--i:url(https://api.iconify.design/fa6-brands/linkedin.svg)" aria-hidden="true"></i>LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/10_kiyo" target="_blank" rel="noopener"><i class="ic" style="--i:url(https://api.iconify.design/fa6-brands/instagram.svg)" aria-hidden="true"></i>Instagram</a></li>
+          <li><a href="https://www.youtube.com/@10_kiyo" target="_blank" rel="noopener"><i class="ic" style="--i:url(https://api.iconify.design/fa6-brands/youtube.svg)" aria-hidden="true"></i>YouTube</a></li>
+          <li><a href="https://letterboxd.com/910_kiyo/" target="_blank" rel="noopener"><i class="ic" style="--i:url(https://api.iconify.design/simple-icons/letterboxd.svg)" aria-hidden="true"></i>Letterboxd</a></li>
+          <li><a href="https://bit.ly/strava-kiyo" target="_blank" rel="noopener"><i class="ic" style="--i:url(https://api.iconify.design/fa6-brands/strava.svg)" aria-hidden="true"></i>Strava</a></li>
+        </ul>
+      </section>
+    </div>
   </main>
 
   <footer>© 2026 Eki Yogawanto</footer>
+
+  <script>
+    const els = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      els.forEach(el => io.observe(el));
+    } else {
+      els.forEach(el => el.classList.add('in'));
+    }
+  </script>
 </body>
 </html>
