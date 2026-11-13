@@ -1,110 +1,494 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eki Yogawanto (Kiyo) – Guru &amp; Pengembang Pemula</title>
-  <meta name="description" content="Portofolio Eki Yogawanto (Kiyo): guru, trainer bersertifikat, dan pengembang web pemula.">
+  <title>Eki Yogawanto (Kiyo) – Guru & Pengembang Web</title>
+  <meta name="description" content="Portofolio & CV Eki Yogawanto (Kiyo): guru bersertifikat, trainer, dan pengembang sistem digital sekolah.">
+  
+  <!-- Open Graph / Social Share -->
+  <meta property="og:title" content="Eki Yogawanto (Kiyo) – Guru & Pengembang Web">
+  <meta property="og:description" content="Guru muda, Certified Trainer, dan pengembang sistem digital di SDS Islam At-Taqwa Rawamangun.">
+  <meta property="og:image" content="foto-kiyo.jpg">
+  <meta property="og:type" content="website">
+
   <link rel="icon" href="logo-kiyo.webp">
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              900: '#064e3b',
+            },
+            paper: '#FAF9F6',
+            ink: '#18181B',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #FAF9F6;
+      color: #18181B;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Scroll Reveal Animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Print / Save as CV PDF Styles */
+    @media print {
+      @page {
+        margin: 1.5cm;
+        size: A4;
+      }
+      body {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        font-size: 11pt;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .print-break-inside {
+        break-inside: avoid;
+      }
+      .shadow-sm, .shadow-md, .shadow-lg {
+        box-shadow: none !important;
+      }
+      .border {
+        border-color: #e4e4e7 !important;
+      }
+      a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 9pt;
+        color: #52525b;
+        font-weight: normal;
+      }
+      .no-print-url::after {
+        content: "" !important;
+      }
+    }
+  </style>
 </head>
-<body>
-  <header class="nav">
-    <a class="brand" href="#top"><img src="logo-kiyo.webp" alt="" width="30" height="30"> Kiyo</a>
-    <nav>
-      <a href="#tentang">Tentang</a>
-      <a href="#proyek">Proyek</a>
-      <a href="#kontak" class="pill">Kontak</a>
-    </nav>
+<body class="selection:bg-brand-100 selection:text-brand-900">
+
+  <!-- Sticky Navigation -->
+  <header class="no-print sticky top-0 z-50 backdrop-blur-md bg-[#FAF9F6]/85 border-b border-zinc-200/70">
+    <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-2.5 font-extrabold text-lg tracking-tight text-zinc-900 hover:opacity-80 transition">
+        <img src="logo-kiyo.webp" alt="Logo Kiyo" width="30" height="30" class="rounded-lg object-cover bg-brand-600" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <span class="hidden w-7 h-7 rounded-lg bg-brand-600 text-white items-center justify-center text-sm font-bold">K</span>
+        <span>Kiyo<span class="text-brand-600">.</span></span>
+      </a>
+
+      <nav class="flex items-center gap-1 sm:gap-2 text-sm font-medium text-zinc-600">
+        <a href="#tentang" class="px-3 py-1.5 rounded-full hover:text-zinc-900 hover:bg-zinc-200/50 transition">Tentang</a>
+        <a href="#pengalaman" class="px-3 py-1.5 rounded-full hover:text-zinc-900 hover:bg-zinc-200/50 transition hidden sm:inline-block">Kualifikasi</a>
+        <a href="#proyek" class="px-3 py-1.5 rounded-full hover:text-zinc-900 hover:bg-zinc-200/50 transition">Proyek</a>
+        <a href="#kontak" class="ml-1 px-4 py-1.5 rounded-full bg-zinc-900 text-white hover:bg-zinc-800 transition font-semibold">Kontak</a>
+      </nav>
+    </div>
   </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-text">
-          <p class="eyebrow">Halo, saya</p>
-          <h1>Eki Yogawanto<br><span>biasa dipanggil Kiyo</span></h1>
-          <p class="lead">Guru muda yang suka membuat alat digital kecil untuk membantu pekerjaan di sekolah.</p>
-          <ul class="chips">
-            <li>Certified Teacher</li>
-            <li>Certified Trainer</li>
-            <li>Pengembang Web Pemula</li>
-          </ul>
-          <div class="cta">
-            <a class="btn" href="#tentang">Kenalan dulu</a>
+  <main id="top" class="max-w-4xl mx-auto px-6 pt-12 pb-20 sm:pt-16">
+    
+    <!-- HERO SECTION -->
+    <section class="pb-14 border-b border-zinc-200/80">
+      <div class="flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-10">
+        
+        <div class="flex-1 text-center md:text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 border border-brand-200/70 text-brand-700 text-xs font-semibold mb-4">
+            <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse no-print"></span>
+            Guru & Pengembang Sistem Digital Sekolah
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-zinc-900 leading-[1.15]">
+            Eki Yogawanto
+            <span class="block text-xl sm:text-2xl font-semibold text-zinc-500 mt-1.5">biasa dipanggil Kiyo</span>
+          </h1>
+
+          <p class="mt-5 text-base sm:text-lg text-zinc-600 leading-relaxed max-w-xl mx-auto md:mx-0">
+            Guru muda yang merancang dan membangun solusi digital untuk mempermudah administrasi, pembelajaran, dan layanan sekolah.
+          </p>
+
+          <!-- Badges / Chips -->
+          <div class="mt-6 flex flex-wrap items-center justify-center md:justify-start gap-2">
+            <a href="https://serdik.ppg.kemendikdasmen.go.id/file-tte/6FHH2QA8X4JP" target="_blank" rel="noopener" class="no-print-url inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-zinc-200/90 hover:border-brand-300 hover:bg-brand-50/40 text-xs font-semibold text-zinc-700 hover:text-brand-700 shadow-sm transition group">
+              <i data-lucide="award" class="w-3.5 h-3.5 text-brand-600"></i>
+              Certified Teacher
+              <i data-lucide="arrow-up-right" class="w-3 h-3 text-zinc-400 group-hover:text-brand-600 transition no-print"></i>
+            </a>
+            <a href="https://drive.google.com/file/d/1b1UkPypRnqqPemoSJ6AnalqPdtN1c9K0/preview" target="_blank" rel="noopener" class="no-print-url inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-zinc-200/90 hover:border-brand-300 hover:bg-brand-50/40 text-xs font-semibold text-zinc-700 hover:text-brand-700 shadow-sm transition group">
+              <i data-lucide="badge-check" class="w-3.5 h-3.5 text-brand-600"></i>
+              Certified Trainer
+              <i data-lucide="arrow-up-right" class="w-3 h-3 text-zinc-400 group-hover:text-brand-600 transition no-print"></i>
+            </a>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-zinc-200/90 text-xs font-semibold text-zinc-700 shadow-sm">
+              <i data-lucide="code-2" class="w-3.5 h-3.5 text-brand-600"></i>
+              Web & Database Developer
+            </span>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="no-print mt-8 flex flex-wrap items-center justify-center md:justify-start gap-3">
+            <a href="#proyek" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm shadow-sm transition">
+              Lihat Karya
+              <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+            </a>
+            <button onclick="window.print()" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white hover:bg-zinc-50 text-zinc-800 border border-zinc-300 font-semibold text-sm shadow-sm transition cursor-pointer">
+              <i data-lucide="printer" class="w-4 h-4 text-zinc-500"></i>
+              Simpan / Cetak CV
+            </button>
           </div>
         </div>
-        <div class="photo-wrap">
-          <img class="foto" src="foto-kiyo.jpg" alt="Foto Eki Yogawanto" width="260" height="260">
+
+        <!-- Profile Photo -->
+        <div class="relative shrink-0">
+          <div class="w-44 h-44 sm:w-52 sm:h-52 rounded-3xl overflow-hidden border-4 border-white shadow-lg bg-zinc-100 rotate-2 hover:rotate-0 transition-transform duration-300">
+            <img 
+              src="foto-kiyo.jpg" 
+              alt="Foto Eki Yogawanto" 
+              width="260" 
+              height="260" 
+              class="w-full h-full object-cover"
+              onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect width=%22200%22 height=%22200%22 fill=%22%23e4e4e7%22/><circle cx=%22100%22 cy=%2276%22 r=%2236%22 fill=%22%23a1a1aa%22/><path d=%22M40 180 C40 135, 160 135, 160 180%22 fill=%22%23a1a1aa%22/></svg>'"
+            >
+          </div>
+          <div class="no-print hidden sm:flex items-center gap-1.5 absolute -bottom-3 -left-3 bg-white px-3 py-1.5 rounded-xl shadow-md border border-zinc-100 text-xs font-semibold text-zinc-700">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-600"></i>
+            <span>Jakarta, Indonesia</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TENTANG SAYA -->
+    <section id="tentang" class="reveal py-12 border-b border-zinc-200/80 print-break-inside">
+      <div class="flex flex-col md:flex-row gap-8 justify-between">
+        <div class="md:w-3/5">
+          <p class="text-xs font-bold uppercase tracking-wider text-brand-600 mb-1.5">Tentang Saya</p>
+          <h2 class="text-2xl font-bold text-zinc-900 tracking-tight mb-4">Mengajar, membuat, dan terus belajar</h2>
+          <p class="text-zinc-600 leading-relaxed text-sm sm:text-base">
+            Saya lulusan <strong>Pendidikan Seni Rupa Universitas Negeri Jakarta</strong> yang memiliki ketertarikan mendalam pada dunia teknologi dan pengembangan perangkat lunak. Latar belakang seni rupa membantu saya merancang antarmuka aplikasi yang bersih dan mudah digunakan, sementara pengalaman mengajar membuat saya paham betul kebutuhan nyata guru, siswa, dan orang tua di sekolah.
+          </p>
+        </div>
+
+        <div class="md:w-2/5 bg-white p-5 rounded-2xl border border-zinc-200/80 shadow-sm">
+          <p class="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-3">Di Waktu Luang</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-zinc-100/80 text-zinc-700 text-xs font-medium">
+              <i data-lucide="gamepad-2" class="w-3.5 h-3.5 text-brand-600"></i>
+              Game strategi & RPG
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-zinc-100/80 text-zinc-700 text-xs font-medium">
+              <i data-lucide="book-open" class="w-3.5 h-3.5 text-brand-600"></i>
+              Buku teknologi & pengembangan diri
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-zinc-100/80 text-zinc-700 text-xs font-medium">
+              <i data-lucide="bike" class="w-3.5 h-3.5 text-brand-600"></i>
+              Bersepeda
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-zinc-100/80 text-zinc-700 text-xs font-medium">
+              <i data-lucide="footprints" class="w-3.5 h-3.5 text-brand-600"></i>
+              Berlari
+            </span>
+          </div>
         </div>
       </div>
     </section>
 
-    <div class="wrap">
-      <section id="tentang" class="reveal">
-        <p class="kicker">Tentang</p>
-        <h2>Mengajar, membuat, dan terus belajar</h2>
-        <div class="two">
-          <p>Saya lulusan Pendidikan Seni Rupa Universitas Negeri Jakarta. Minat saya ada di teknologi dan pengembangan perangkat lunak, dan saya aktif di komunitas teknologi.</p>
+    <!-- PENGALAMAN & PENDIDIKAN (CV SECTION) -->
+    <section id="pengalaman" class="reveal py-12 border-b border-zinc-200/80 print-break-inside">
+      <p class="text-xs font-bold uppercase tracking-wider text-brand-600 mb-1.5">Latar Belakang</p>
+      <h2 class="text-2xl font-bold text-zinc-900 tracking-tight mb-6">Peran, Pendidikan & Sertifikasi</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <!-- Peran Utama -->
+        <div class="bg-white p-5 rounded-2xl border border-zinc-200/80 shadow-sm">
+          <div class="flex items-start justify-between gap-2 mb-2">
+            <div>
+              <h3 class="font-bold text-zinc-900 text-base">Guru & Pengelola Layanan Digital</h3>
+              <p class="text-sm font-medium text-brand-700">SDS Islam At-Taqwa Rawamangun</p>
+            </div>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-brand-50 text-brand-700 shrink-0">Aktif</span>
+          </div>
+          <p class="text-sm text-zinc-600 leading-relaxed mt-2">
+            Mengajar siswa sekaligus merancang, mengembangkan, dan memelihara ekosistem digital sekolah mulai dari situs utama, sistem penerimaan murid baru (SPMB), perpustakaan digital, hingga portal internal guru.
+          </p>
+        </div>
+
+        <!-- Pendidikan & Sertifikasi -->
+        <div class="bg-white p-5 rounded-2xl border border-zinc-200/80 shadow-sm flex flex-col justify-between gap-4">
           <div>
-            <p class="small-title">Di waktu luang</p>
-            <ul class="chips light">
-              <li>Game strategi &amp; RPG</li>
-              <li>Buku teknologi &amp; pengembangan diri</li>
-              <li>Bersepeda</li>
-              <li>Berlari</li>
+            <h3 class="font-bold text-zinc-900 text-base">S1 Pendidikan Seni Rupa</h3>
+            <p class="text-sm text-zinc-600">Universitas Negeri Jakarta (UNJ)</p>
+          </div>
+          <div class="pt-3 border-t border-zinc-100">
+            <h4 class="font-bold text-zinc-900 text-sm mb-2">Sertifikasi & Kualifikasi</h4>
+            <ul class="text-xs text-zinc-600 space-y-2">
+              <li class="flex items-center justify-between gap-2">
+                <span class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
+                  <span>Certified Teacher (Pendidik Bersertifikat)</span>
+                </span>
+                <a href="https://serdik.ppg.kemendikdasmen.go.id/file-tte/6FHH2QA8X4JP" target="_blank" rel="noopener" class="no-print-url inline-flex items-center gap-1 text-brand-600 hover:text-brand-700 font-semibold shrink-0">
+                  Sertifikat <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </li>
+              <li class="flex items-center justify-between gap-2">
+                <span class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
+                  <span>Certified Trainer (Pelatih Bersertifikat)</span>
+                </span>
+                <a href="https://drive.google.com/file/d/1b1UkPypRnqqPemoSJ6AnalqPdtN1c9K0/preview" target="_blank" rel="noopener" class="no-print-url inline-flex items-center gap-1 text-brand-600 hover:text-brand-700 font-semibold shrink-0">
+                  Sertifikat <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section id="proyek" class="reveal">
-        <p class="kicker">Proyek &amp; peran</p>
-        <h2>Developer sekolah</h2>
-        <p class="intro">Selain mengajar, saya mengelola layanan digital SDS Islam At-Taqwa Rawamangun, dari situs sekolah sampai sistem internal.</p>
-        <ul class="chips light">
-          <li>Web sekolah</li>
-          <li>Web SPMB</li>
-          <li>Portal internal</li>
-          <li>Database</li>
-          <li>Pemeliharaan</li>
-        </ul>
-        <div class="grid">
-          <a class="card" href="https://portal-sekolah.ekiyogawanto-school.workers.dev/" target="_blank" rel="noopener">
-            <i class="ic big" style="--i:url(https://api.iconify.design/fa6-solid/school.svg)" aria-hidden="true"></i>
-            <h3>Portal Sekolah</h3>
-            <p>Portal digital untuk orang tua, guru, dan tamu sekolah: profil sekolah, info SPMB, jurnal murid, buku tamu, administrasi guru, dan pantau belajar anak.</p>
-            <span class="more">Buka portal →</span>
-          </a>
+      <!-- Tech Stack / Keahlian Teknis -->
+      <div class="mt-5 bg-white p-5 rounded-2xl border border-zinc-200/80 shadow-sm">
+        <p class="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-3">Keahlian & Teknologi yang Digunakan</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1 rounded-lg bg-zinc-100 text-zinc-700 text-xs font-semibold">HTML5 & CSS3</span>
+          <span class="px-3 py-1 rounded-lg bg-zinc-100 text-zinc-700 text-xs font-semibold">Tailwind CSS</span>
+          <span class="px-3 py-1 rounded-lg bg-zinc-100 text-zinc-700 text-xs font-semibold">TypeScript / JavaScript</span>
+          <span class="px-3 py-1 rounded-lg bg-zinc-100 text-zinc-700 text-xs font-semibold">Next.js / React</span>
+          <span class="px-3 py-1 rounded-lg bg-zinc-100 text-zinc-700 text-xs font-semibold">Database & Cloud Deployment</span>
+          <span class="px-3 py-1 rounded-lg bg-zinc-100 text-zinc-700 text-xs font-semibold">UI/UX & Desain Grafis</span>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="kontak" class="reveal">
-        <p class="kicker">Kontak</p>
-        <h2>Mari terhubung</h2>
-        <ul class="links">
-          <li><a href="mailto:ekiyogawanto@gmail.com"><i class="ic" style="--i:url(https://api.iconify.design/fa6-solid/envelope.svg)" aria-hidden="true"></i>Email</a></li>
-          <li><a href="https://www.linkedin.com/in/ekiyogawanto/" target="_blank" rel="noopener"><i class="ic" style="--i:url(https://api.iconify.design/fa6-brands/linkedin.svg)" aria-hidden="true"></i>LinkedIn</a></li>
-          <li><a href="https://www.instagram.com/10_kiyo" target="_blank" rel="noopener"><i class="ic" style="--i:url(https://api.iconify.design/fa6-brands/instagram.svg)" aria-hidden="true"></i>Instagram</a></li>
-          <li><a href="https://www.youtube.com/@10_kiyo" target="_blank" rel="noopener"><i class="ic" style="--i:url(https://api.iconify.design/fa6-brands/youtube.svg)" aria-hidden="true"></i>YouTube</a></li>
-          <li><a href="https://letterboxd.com/910_kiyo/" target="_blank" rel="noopener"><i class="ic" style="--i:url(https://api.iconify.design/simple-icons/letterboxd.svg)" aria-hidden="true"></i>Letterboxd</a></li>
-          <li><a href="https://bit.ly/strava-kiyo" target="_blank" rel="noopener"><i class="ic" style="--i:url(https://api.iconify.design/fa6-brands/strava.svg)" aria-hidden="true"></i>Strava</a></li>
-        </ul>
-      </section>
-    </div>
+    <!-- PROYEK & KARYA -->
+    <section id="proyek" class="reveal py-12 border-b border-zinc-200/80">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-wider text-brand-600 mb-1.5">Portofolio & Karya</p>
+          <h2 class="text-2xl font-bold text-zinc-900 tracking-tight">Sistem Digital Sekolah</h2>
+        </div>
+        <p class="text-sm text-zinc-500 max-w-md">
+          Aplikasi web yang dibangun untuk mendukung operasional harian SDS Islam At-Taqwa Rawamangun.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        
+        <!-- Proyek 1: Portal Sekolah (Utama) -->
+        <a href="https://sistem-cms.vercel.app/si-taqwa" target="_blank" rel="noopener" class="group bg-white p-6 rounded-2xl border border-zinc-200/90 hover:border-brand-500 shadow-sm hover:shadow-md transition-all flex flex-col justify-between print-break-inside">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-11 h-11 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                <i data-lucide="school" class="w-5 h-5"></i>
+              </div>
+              <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-600">Produksi</span>
+            </div>
+            <h3 class="text-lg font-bold text-zinc-900 group-hover:text-brand-700 transition-colors">Portal Sekolah</h3>
+            <p class="text-sm text-zinc-600 mt-2 leading-relaxed">
+              Portal digital terpadu untuk orang tua, guru, dan tamu sekolah: profil sekolah, informasi SPMB, jurnal harian murid, buku tamu digital, administrasi guru, dan fitur pantau belajar anak.
+            </p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-zinc-100 flex items-center justify-between text-xs font-bold text-brand-600">
+            <span>Buka Portal Sekolah</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+          </div>
+        </a>
+
+        <!-- Proyek 2: Sistem Ekskul & Kartu Pelajar -->
+        <a href="https://sistem-ekskul.vercel.app" target="_blank" rel="noopener" class="group bg-white p-6 rounded-2xl border border-zinc-200/90 hover:border-brand-500 shadow-sm hover:shadow-md transition-all flex flex-col justify-between print-break-inside">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                <i data-lucide="id-card" class="w-5 h-5"></i>
+              </div>
+              <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-600">Next.js & TypeScript</span>
+            </div>
+            <h3 class="text-lg font-bold text-zinc-900 group-hover:text-blue-700 transition-colors">Sistem Ekskul & Kartu Pelajar</h3>
+            <p class="text-sm text-zinc-600 mt-2 leading-relaxed">
+              Aplikasi manajemen pendaftaran ekstrakurikuler siswa, verifikasi bukti pembayaran, pengelolaan data master kegiatan, serta pencetakan kartu pelajar digital secara otomatis.
+            </p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-zinc-100 flex items-center justify-between text-xs font-bold text-blue-600">
+            <span>Buka Aplikasi Ekskul</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+          </div>
+        </a>
+
+        <!-- Proyek 3: E-Library -->
+        <a href="https://system-library-pi.vercel.app" target="_blank" rel="noopener" class="group bg-white p-6 rounded-2xl border border-zinc-200/90 hover:border-amber-500 shadow-sm hover:shadow-md transition-all flex flex-col justify-between print-break-inside">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-11 h-11 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                <i data-lucide="library" class="w-5 h-5"></i>
+              </div>
+              <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-600">Sistem Internal</span>
+            </div>
+            <h3 class="text-lg font-bold text-zinc-900 group-hover:text-amber-700 transition-colors">E-Library SDS Islam At-Taqwa</h3>
+            <p class="text-sm text-zinc-600 mt-2 leading-relaxed">
+              Katalog perpustakaan digital sekolah yang memudahkan siswa dan guru mencari koleksi buku bacaan, bahan ajar, serta memantau sirkulasi peminjaman buku.
+            </p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-zinc-100 flex items-center justify-between text-xs font-bold text-amber-600">
+            <span>Buka E-Library</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+          </div>
+        </a>
+
+        <!-- Proyek 4: Web SPMB -->
+        <a href="https://sistem-ppdb-three.vercel.app" target="_blank" rel="noopener" class="group bg-white p-6 rounded-2xl border border-zinc-200/90 hover:border-purple-500 shadow-sm hover:shadow-md transition-all flex flex-col justify-between print-break-inside">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-11 h-11 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                <i data-lucide="user-plus" class="w-5 h-5"></i>
+              </div>
+              <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-600">Layanan Publik</span>
+            </div>
+            <h3 class="text-lg font-bold text-zinc-900 group-hover:text-purple-700 transition-colors">Web SPMB Sekolah</h3>
+            <p class="text-sm text-zinc-600 mt-2 leading-relaxed">
+              Sistem Penerimaan Murid Baru (SPMB) berbasis web untuk mempermudah calon wali murid mendaftar, mengunggah berkas persyaratan, dan memantau alur seleksi secara daring.
+            </p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-zinc-100 flex items-center justify-between text-xs font-bold text-purple-600">
+            <span>Buka Web SPMB</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- KONTAK & JEJARING -->
+    <section id="kontak" class="reveal pt-12 print-break-inside">
+      <p class="text-xs font-bold uppercase tracking-wider text-brand-600 mb-1.5">Kontak</p>
+      <h2 class="text-2xl font-bold text-zinc-900 tracking-tight mb-2">Mari terhubung</h2>
+      <p class="text-sm text-zinc-600 mb-6">
+        Terbuka untuk diskusi seputar pendidikan, pelatihan teknologi sekolah, maupun kolaborasi pengembangan web.
+      </p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        <a href="mailto:ekiyogawanto@gmail.com" class="no-print-url flex items-center gap-3 p-3.5 rounded-xl bg-white border border-zinc-200/90 hover:border-brand-500 hover:bg-brand-50/30 transition group">
+          <div class="w-9 h-9 rounded-lg bg-zinc-100 group-hover:bg-brand-100 text-zinc-700 group-hover:text-brand-700 flex items-center justify-center transition">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+          </div>
+          <div class="overflow-hidden">
+            <p class="text-xs font-bold text-zinc-900">Email</p>
+            <p class="text-[11px] text-zinc-500 truncate">ekiyogawanto@gmail.com</p>
+          </div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/ekiyogawanto/" target="_blank" rel="noopener" class="no-print-url flex items-center gap-3 p-3.5 rounded-xl bg-white border border-zinc-200/90 hover:border-blue-500 hover:bg-blue-50/30 transition group">
+          <div class="w-9 h-9 rounded-lg bg-zinc-100 group-hover:bg-blue-100 text-zinc-700 group-hover:text-blue-700 flex items-center justify-center transition">
+            <i data-lucide="linkedin" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-zinc-900">LinkedIn</p>
+            <p class="text-[11px] text-zinc-500">/in/ekiyogawanto</p>
+          </div>
+        </a>
+
+        <a href="https://www.instagram.com/10_kiyo" target="_blank" rel="noopener" class="no-print-url flex items-center gap-3 p-3.5 rounded-xl bg-white border border-zinc-200/90 hover:border-pink-500 hover:bg-pink-50/30 transition group">
+          <div class="w-9 h-9 rounded-lg bg-zinc-100 group-hover:bg-pink-100 text-zinc-700 group-hover:text-pink-700 flex items-center justify-center transition">
+            <i data-lucide="instagram" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-zinc-900">Instagram</p>
+            <p class="text-[11px] text-zinc-500">@10_kiyo</p>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/@10_kiyo" target="_blank" rel="noopener" class="no-print-url flex items-center gap-3 p-3.5 rounded-xl bg-white border border-zinc-200/90 hover:border-red-500 hover:bg-red-50/30 transition group">
+          <div class="w-9 h-9 rounded-lg bg-zinc-100 group-hover:bg-red-100 text-zinc-700 group-hover:text-red-700 flex items-center justify-center transition">
+            <i data-lucide="youtube" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-zinc-900">YouTube</p>
+            <p class="text-[11px] text-zinc-500">@10_kiyo</p>
+          </div>
+        </a>
+
+        <a href="https://letterboxd.com/910_kiyo/" target="_blank" rel="noopener" class="no-print-url flex items-center gap-3 p-3.5 rounded-xl bg-white border border-zinc-200/90 hover:border-orange-500 hover:bg-orange-50/30 transition group">
+          <div class="w-9 h-9 rounded-lg bg-zinc-100 group-hover:bg-orange-100 text-zinc-700 group-hover:text-orange-700 flex items-center justify-center transition">
+            <i data-lucide="film" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-zinc-900">Letterboxd</p>
+            <p class="text-[11px] text-zinc-500">910_kiyo</p>
+          </div>
+        </a>
+
+        <a href="https://bit.ly/strava-kiyo" target="_blank" rel="noopener" class="no-print-url flex items-center gap-3 p-3.5 rounded-xl bg-white border border-zinc-200/90 hover:border-orange-600 hover:bg-orange-50/30 transition group">
+          <div class="w-9 h-9 rounded-lg bg-zinc-100 group-hover:bg-orange-100 text-zinc-700 group-hover:text-orange-600 flex items-center justify-center transition">
+            <i data-lucide="activity" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-zinc-900">Strava</p>
+            <p class="text-[11px] text-zinc-500">Catatan Lari & Sepeda</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
   </main>
 
-  <footer>© 2026 Eki Yogawanto</footer>
+  <footer class="border-t border-zinc-200/80 py-8 text-center text-xs text-zinc-500">
+    <p>© 2026 Eki Yogawanto (Kiyo)</p>
+  </footer>
 
   <script>
+    // Inisialisasi ikon Lucide
+    lucide.createIcons();
+
+    // Animasi Scroll Reveal
     const els = document.querySelectorAll('.reveal');
     if ('IntersectionObserver' in window) {
       const io = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-      }, { threshold: 0.12 });
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('in');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1 });
       els.forEach(el => io.observe(el));
     } else {
       els.forEach(el => el.classList.add('in'));
