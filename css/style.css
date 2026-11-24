@@ -1,0 +1,57 @@
+body {
+  background-color: #FAF9F6;
+  color: #18181B;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scroll Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Print / Save as CV PDF Styles */
+@media print {
+  @page {
+    margin: 1.5cm;
+    size: A4;
+  }
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .print-break-inside {
+    break-inside: avoid;
+  }
+  .shadow-sm,
+  .shadow-md,
+  .shadow-lg {
+    box-shadow: none !important;
+  }
+  .border {
+    border-color: #e4e4e7 !important;
+  }
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #52525b;
+    font-weight: normal;
+  }
+  .no-print-url::after {
+    content: "" !important;
+  }
+}

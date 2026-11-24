@@ -19,19 +19,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   
-  <!-- Tailwind CSS -->
+  <!-- Tailwind CSS & Custom CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/style.css">
   
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-          },
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
           colors: {
             brand: {
               50: '#ecfdf5',
@@ -48,63 +45,6 @@
       }
     }
   </script>
-
-  <style>
-    body {
-      background-color: #FAF9F6;
-      color: #18181B;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* Scroll Reveal Animation */
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .reveal.in {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Print / Save as CV PDF Styles */
-    @media print {
-      @page {
-        margin: 1.5cm;
-        size: A4;
-      }
-      body {
-        background-color: #ffffff !important;
-        color: #000000 !important;
-        font-size: 11pt;
-      }
-      .no-print {
-        display: none !important;
-      }
-      .reveal {
-        opacity: 1 !important;
-        transform: none !important;
-      }
-      .print-break-inside {
-        break-inside: avoid;
-      }
-      .shadow-sm, .shadow-md, .shadow-lg {
-        box-shadow: none !important;
-      }
-      .border {
-        border-color: #e4e4e7 !important;
-      }
-      a[href^="http"]::after {
-        content: " (" attr(href) ")";
-        font-size: 9pt;
-        color: #52525b;
-        font-weight: normal;
-      }
-      .no-print-url::after {
-        content: "" !important;
-      }
-    }
-  </style>
 </head>
 <body class="selection:bg-brand-100 selection:text-brand-900">
 
@@ -131,7 +71,6 @@
     <!-- HERO SECTION -->
     <section class="pb-14 border-b border-zinc-200/80">
       <div class="flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-10">
-        
         <div class="flex-1 text-center md:text-left">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 border border-brand-200/70 text-brand-700 text-xs font-semibold mb-4">
             <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse no-print"></span>
@@ -147,7 +86,6 @@
             Guru muda yang merancang dan membangun solusi digital untuk mempermudah administrasi, pembelajaran, dan layanan sekolah.
           </p>
 
-          <!-- Badges / Chips -->
           <div class="mt-6 flex flex-wrap items-center justify-center md:justify-start gap-2">
             <a href="https://serdik.ppg.kemendikdasmen.go.id/file-tte/6FHH2QA8X4JP" target="_blank" rel="noopener" class="no-print-url inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-zinc-200/90 hover:border-brand-300 hover:bg-brand-50/40 text-xs font-semibold text-zinc-700 hover:text-brand-700 shadow-sm transition group">
               <i data-lucide="award" class="w-3.5 h-3.5 text-brand-600"></i>
@@ -165,7 +103,6 @@
             </span>
           </div>
 
-          <!-- Action Buttons -->
           <div class="no-print mt-8 flex flex-wrap items-center justify-center md:justify-start gap-3">
             <a href="#proyek" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm shadow-sm transition">
               Lihat Karya Web
@@ -182,7 +119,6 @@
           </div>
         </div>
 
-        <!-- Profile Photo -->
         <div class="relative shrink-0">
           <div class="w-44 h-44 sm:w-52 sm:h-52 rounded-3xl overflow-hidden border-4 border-white shadow-lg bg-zinc-100 rotate-2 hover:rotate-0 transition-transform duration-300">
             <img 
@@ -199,7 +135,6 @@
             <span>Jakarta, Indonesia</span>
           </div>
         </div>
-
       </div>
     </section>
 
@@ -218,33 +153,28 @@
           <p class="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-3">Di Waktu Luang</p>
           <div class="flex flex-wrap gap-2">
             <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-zinc-100/80 text-zinc-700 text-xs font-medium">
-              <i data-lucide="gamepad-2" class="w-3.5 h-3.5 text-brand-600"></i>
-              Game strategi & RPG
+              <i data-lucide="gamepad-2" class="w-3.5 h-3.5 text-brand-600"></i> Game strategi & RPG
             </span>
             <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-zinc-100/80 text-zinc-700 text-xs font-medium">
-              <i data-lucide="book-open" class="w-3.5 h-3.5 text-brand-600"></i>
-              Buku teknologi & pengembangan diri
+              <i data-lucide="book-open" class="w-3.5 h-3.5 text-brand-600"></i> Buku teknologi & pengembangan diri
             </span>
             <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-zinc-100/80 text-zinc-700 text-xs font-medium">
-              <i data-lucide="bike" class="w-3.5 h-3.5 text-brand-600"></i>
-              Bersepeda
+              <i data-lucide="bike" class="w-3.5 h-3.5 text-brand-600"></i> Bersepeda
             </span>
             <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-zinc-100/80 text-zinc-700 text-xs font-medium">
-              <i data-lucide="footprints" class="w-3.5 h-3.5 text-brand-600"></i>
-              Berlari
+              <i data-lucide="footprints" class="w-3.5 h-3.5 text-brand-600"></i> Berlari
             </span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PENGALAMAN & PENDIDIKAN (CV SECTION) -->
+    <!-- PENGALAMAN & PENDIDIKAN -->
     <section id="pengalaman" class="reveal py-12 border-b border-zinc-200/80 print-break-inside">
       <p class="text-xs font-bold uppercase tracking-wider text-brand-600 mb-1.5">Latar Belakang</p>
       <h2 class="text-2xl font-bold text-zinc-900 tracking-tight mb-6">Peran, Pendidikan & Sertifikasi</h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <!-- Peran Utama -->
         <div class="bg-white p-5 rounded-2xl border border-zinc-200/80 shadow-sm flex flex-col justify-between">
           <div>
             <div class="flex items-start justify-between gap-2 mb-2">
@@ -267,7 +197,6 @@
           </div>
         </div>
 
-        <!-- Pendidikan & Sertifikasi -->
         <div class="bg-white p-5 rounded-2xl border border-zinc-200/80 shadow-sm flex flex-col justify-between gap-4">
           <div>
             <h3 class="font-bold text-zinc-900 text-base">S1 Pendidikan Seni Rupa</h3>
@@ -299,143 +228,29 @@
         </div>
       </div>
 
-      <!-- Tech Stack / Keahlian Teknis -->
       <div class="mt-5 bg-white p-5 rounded-2xl border border-zinc-200/80 shadow-sm">
         <p class="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-3">Keahlian & Teknologi yang Digunakan</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1 rounded-lg bg-zinc-100 text-zinc-700 text-xs font-semibold">HTML5 & CSS3</span>
-          <span class="px-3 py-1 rounded-lg bg-zinc-100 text-zinc-700 text-xs font-semibold">Tailwind CSS</span>
-          <span class="px-3 py-1 rounded-lg bg-zinc-100 text-zinc-700 text-xs font-semibold">TypeScript / JavaScript</span>
-          <span class="px-3 py-1 rounded-lg bg-zinc-100 text-zinc-700 text-xs font-semibold">Next.js / React</span>
-          <span class="px-3 py-1 rounded-lg bg-zinc-100 text-zinc-700 text-xs font-semibold">Database & Cloud Deployment</span>
-          <span class="px-3 py-1 rounded-lg bg-zinc-100 text-zinc-700 text-xs font-semibold">UI/UX & Desain Grafis</span>
-        </div>
+        <div id="skills-list" class="flex flex-wrap gap-2"></div>
       </div>
     </section>
 
-    <!-- PROYEK & KARYA -->
+    <!-- PROYEK & KARYA (Diisi otomatis dari js/data.js) -->
     <section id="proyek" class="reveal py-12 border-b border-zinc-200/80">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
-        <div>
-          <p class="text-xs font-bold uppercase tracking-wider text-brand-600 mb-1.5">Portofolio & Karya</p>
-          <h2 class="text-2xl font-bold text-zinc-900 tracking-tight">Sistem Digital & Aplikasi Web</h2>
-        </div>
+      <div class="mb-6">
+        <p class="text-xs font-bold uppercase tracking-wider text-brand-600 mb-1.5">Portofolio & Karya</p>
+        <h2 class="text-2xl font-bold text-zinc-900 tracking-tight">Sistem Digital & Aplikasi Web</h2>
       </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-        
-        <!-- Proyek 1: Web Sekolah & Portal SI-TAQWA -->
-        <a href="https://sistem-cms.vercel.app/si-taqwa" target="_blank" rel="noopener" class="group bg-white p-6 rounded-2xl border border-zinc-200/90 hover:border-brand-500 shadow-sm hover:shadow-md transition-all flex flex-col justify-between print-break-inside">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <div class="w-11 h-11 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center group-hover:bg-brand-600 group-hover:text-white transition-colors">
-                <i data-lucide="school" class="w-5 h-5"></i>
-              </div>
-              <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-600">Ekosistem Terpadu</span>
-            </div>
-            <h3 class="text-lg font-bold text-zinc-900 group-hover:text-brand-700 transition-colors">Web Sekolah & Portal SI-TAQWA</h3>
-            <p class="text-sm text-zinc-600 mt-2 leading-relaxed">
-              Situs resmi dan pusat layanan digital terintegrasi (SSO) yang menyatukan seluruh operasional sekolah: penerimaan murid baru (SPMB), manajemen akademik & rapor digital, presensi, jurnal harian, hingga layanan administrasi.
-            </p>
-          </div>
-          <div class="mt-5 pt-4 border-t border-zinc-100 flex items-center justify-between text-xs font-bold text-brand-600">
-            <span>Buka Portal SI-TAQWA</span>
-            <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
-          </div>
-        </a>
-
-        <!-- Proyek 2: WorkGrid — Real-time Collaborative Kanban -->
-        <a href="https://work-grid-liard.vercel.app" target="_blank" rel="noopener" class="group bg-white p-6 rounded-2xl border border-zinc-200/90 hover:border-sky-500 shadow-sm hover:shadow-md transition-all flex flex-col justify-between print-break-inside">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <div class="w-11 h-11 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center group-hover:bg-sky-600 group-hover:text-white transition-colors">
-                <i data-lucide="kanban" class="w-5 h-5"></i>
-              </div>
-              <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-600">Realtime SaaS</span>
-            </div>
-            <h3 class="text-lg font-bold text-zinc-900 group-hover:text-sky-700 transition-colors">WorkGrid — Collaborative Kanban</h3>
-            <p class="text-sm text-zinc-600 mt-2 leading-relaxed">
-              Aplikasi manajemen proyek berbasis Kanban dengan sinkronisasi Supabase Realtime, optimistic drag-and-drop, filter prioritas, serta isolasi keamanan multi-tenant Row Level Security (RLS) dengan akun demo 1-klik.
-            </p>
-          </div>
-          <div class="mt-5 pt-4 border-t border-zinc-100 flex items-center justify-between text-xs font-bold text-sky-600">
-            <span>Coba Demo WorkGrid</span>
-            <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
-          </div>
-        </a>
-
-      </div>
+      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-5"></div>
     </section>
 
-    <!-- KONTAK & JEJARING -->
+    <!-- KONTAK & JEJARING (Diisi otomatis dari js/data.js) -->
     <section id="kontak" class="reveal pt-12 print-break-inside">
       <p class="text-xs font-bold uppercase tracking-wider text-brand-600 mb-1.5">Kontak</p>
       <h2 class="text-2xl font-bold text-zinc-900 tracking-tight mb-2">Mari terhubung</h2>
       <p class="text-sm text-zinc-600 mb-6">
         Terbuka untuk diskusi seputar pendidikan, pelatihan teknologi sekolah, maupun kolaborasi pengembangan web.
       </p>
-
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-        <a href="mailto:ekiyogawanto@gmail.com" class="no-print-url flex items-center gap-3 p-3.5 rounded-xl bg-white border border-zinc-200/90 hover:border-brand-500 hover:bg-brand-50/30 transition group">
-          <div class="w-9 h-9 rounded-lg bg-zinc-100 group-hover:bg-brand-100 text-zinc-700 group-hover:text-brand-700 flex items-center justify-center shrink-0 transition">
-            <i data-lucide="mail" class="w-4 h-4"></i>
-          </div>
-          <div class="overflow-hidden">
-            <p class="text-xs font-bold text-zinc-900">Email</p>
-            <p class="text-[11px] text-zinc-500 truncate">ekiyogawanto@gmail.com</p>
-          </div>
-        </a>
-
-        <a href="https://www.linkedin.com/in/ekiyogawanto/" target="_blank" rel="noopener" class="no-print-url flex items-center gap-3 p-3.5 rounded-xl bg-white border border-zinc-200/90 hover:border-blue-500 hover:bg-blue-50/30 transition group">
-          <div class="w-9 h-9 rounded-lg bg-zinc-100 group-hover:bg-blue-100 text-zinc-700 group-hover:text-blue-700 flex items-center justify-center shrink-0 transition">
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-          </div>
-          <div class="overflow-hidden">
-            <p class="text-xs font-bold text-zinc-900">LinkedIn</p>
-            <p class="text-[11px] text-zinc-500 truncate">/in/ekiyogawanto</p>
-          </div>
-        </a>
-
-        <a href="https://www.instagram.com/10_kiyo" target="_blank" rel="noopener" class="no-print-url flex items-center gap-3 p-3.5 rounded-xl bg-white border border-zinc-200/90 hover:border-pink-500 hover:bg-pink-50/30 transition group">
-          <div class="w-9 h-9 rounded-lg bg-zinc-100 group-hover:bg-pink-100 text-zinc-700 group-hover:text-pink-700 flex items-center justify-center shrink-0 transition">
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
-          </div>
-          <div class="overflow-hidden">
-            <p class="text-xs font-bold text-zinc-900">Instagram</p>
-            <p class="text-[11px] text-zinc-500 truncate">@10_kiyo</p>
-          </div>
-        </a>
-
-        <a href="https://www.youtube.com/@10_kiyo" target="_blank" rel="noopener" class="no-print-url flex items-center gap-3 p-3.5 rounded-xl bg-white border border-zinc-200/90 hover:border-red-500 hover:bg-red-50/30 transition group">
-          <div class="w-9 h-9 rounded-lg bg-zinc-100 group-hover:bg-red-100 text-zinc-700 group-hover:text-red-700 flex items-center justify-center shrink-0 transition">
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-          </div>
-          <div class="overflow-hidden">
-            <p class="text-xs font-bold text-zinc-900">YouTube</p>
-            <p class="text-[11px] text-zinc-500 truncate">@10_kiyo</p>
-          </div>
-        </a>
-
-        <a href="https://letterboxd.com/910_kiyo/" target="_blank" rel="noopener" class="no-print-url flex items-center gap-3 p-3.5 rounded-xl bg-white border border-zinc-200/90 hover:border-orange-500 hover:bg-orange-50/30 transition group">
-          <div class="w-9 h-9 rounded-lg bg-zinc-100 group-hover:bg-orange-100 text-zinc-700 group-hover:text-orange-700 flex items-center justify-center shrink-0 transition">
-            <i data-lucide="film" class="w-4 h-4"></i>
-          </div>
-          <div class="overflow-hidden">
-            <p class="text-xs font-bold text-zinc-900">Letterboxd</p>
-            <p class="text-[11px] text-zinc-500 truncate">910_kiyo</p>
-          </div>
-        </a>
-
-        <a href="https://bit.ly/strava-kiyo" target="_blank" rel="noopener" class="no-print-url flex items-center gap-3 p-3.5 rounded-xl bg-white border border-zinc-200/90 hover:border-orange-600 hover:bg-orange-50/30 transition group">
-          <div class="w-9 h-9 rounded-lg bg-zinc-100 group-hover:bg-orange-100 text-zinc-700 group-hover:text-orange-600 flex items-center justify-center shrink-0 transition">
-            <i data-lucide="activity" class="w-4 h-4"></i>
-          </div>
-          <div class="overflow-hidden">
-            <p class="text-xs font-bold text-zinc-900">Strava</p>
-            <p class="text-[11px] text-zinc-500 truncate">Catatan Lari & Sepeda</p>
-          </div>
-        </a>
-      </div>
+      <div id="contacts-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-3"></div>
     </section>
 
   </main>
@@ -444,25 +259,7 @@
     <p>© 2026 Eki Yogawanto (Kiyo). Dibuat dengan semangat belajar dan berbagi.</p>
   </footer>
 
-  <script>
-    // Inisialisasi ikon Lucide
-    lucide.createIcons();
-
-    // Animasi Scroll Reveal
-    const els = document.querySelectorAll('.reveal');
-    if ('IntersectionObserver' in window) {
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('in');
-            io.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.1 });
-      els.forEach(el => io.observe(el));
-    } else {
-      els.forEach(el => el.classList.add('in'));
-    }
-  </script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
